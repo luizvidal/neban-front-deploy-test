@@ -1,0 +1,106 @@
+<p-panel>
+  <ng-template pTemplate="header"
+    ><h1 class="m-0 p-0 text-base text-primary">
+      {{ "CUSTOMER.FORM.TITLE" | translate }}
+    </h1></ng-template
+  >
+
+  <form class="my-3" [formGroup]="formGroup">
+    <div class="grid pt-2" [formGroup]="formGroup">
+      <div class="col-12 sm:col-6 md:col-4">
+        <app-input
+          formControlName="firstName"
+          [label]="'COMMON.NAME' | translate"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-4">
+        <app-input
+          formControlName="lastName"
+          [label]="'COMMON.LAST_NAME' | translate"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-4">
+        <app-input
+          formControlName="cpf"
+          label="CPF"
+          type="mask"
+          mask="999.999.999-99"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-4">
+        <app-input formControlName="rg" label="RG" type="number" />
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-4">
+        <app-input
+          formControlName="profession"
+          [label]="'COMMON.PROFESSION' | translate"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-4">
+        <app-input
+          formControlName="nationality"
+          [label]="'COMMON.NATIONALITY' | translate"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-8">
+        <app-input
+          type="dropdown"
+          [label]="'COMMON.CIVIL_STATE' | translate"
+          formControlName="maritalStatus"
+          [dropdownData]="maritalStatuses"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-4">
+        <app-input
+          type="dropdown"
+          [label]="'COMMON.PROPERTY_REGIME' | translate"
+          formControlName="propertyRegime"
+          [dropdownData]="propertyRegime"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-8">
+        <app-input
+          formControlName="address"
+          [label]="'COMMON.ADDRESS' | translate"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-4">
+        <app-input
+          formControlName="cep"
+          label="CEP"
+          type="mask"
+          mask="99999-999"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-column sm:flex-row gap-3 justify-content-end mt-3">
+      <app-button
+        severity="danger"
+        styleClass="w-full sm:w-auto"
+        [label]="'COMMON.CANCEL' | translate"
+        [outlined]="true"
+        [routerLink]="['/app', 'home']"
+      />
+
+      <app-button
+        severity="success"
+        styleClass="w-full text-center sm:w-auto"
+        [label]="'COMMON.SAVE' | translate"
+        [loading]="loading()"
+        [disabled]="formGroup.invalid || formGroup.pristine"
+        [outlined]="true"
+        (onClick)="save()"
+      />
+    </div>
+  </form>
+</p-panel>

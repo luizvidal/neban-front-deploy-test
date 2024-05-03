@@ -1,0 +1,48 @@
+<p-panel>
+  <ng-template pTemplate="header"
+    ><h1 class="m-0 p-0 text-base text-primary">
+      {{ "COMMON.QUOTATION" | translate }}
+    </h1></ng-template
+  >
+
+  <form class="my-3" [formGroup]="formGroup">
+    <div class="grid">
+      <div class="col-12 xl:col-4">
+        <app-input
+          formControlName="percentualTax"
+          type="number"
+          [label]="'QUOTATION.PERCENTUAL_TAX' | translate"
+          [minFractionDigits]="1"
+          [maxFractionDigits]="2"
+          suffix="%"
+        />
+      </div>
+      <div class="col-12 sm:col-6 xl:col-4">
+        <app-input
+          formControlName="brlAmount"
+          [label]="'QUOTATION.BRL_VALUE' | translate"
+          type="currency"
+        />
+      </div>
+      <div class="col-12 sm:col-6 xl:col-4">
+        <app-input
+          formControlName="arsAmount"
+          [label]="'QUOTATION.ARS_VALUE' | translate"
+          type="currency"
+          currency="ARS"
+        />
+      </div>
+    </div>
+    <div class="flex flex-column sm:flex-row gap-3 justify-content-end mt-3">
+      <app-button
+        severity="success"
+        label="Salvar"
+        styleClass="w-full sm:w-auto"
+        [disabled]="formGroup.invalid || formGroup.pristine"
+        [loading]="loading()"
+        [outlined]="true"
+        (onClick)="save()"
+      ></app-button>
+    </div>
+  </form>
+</p-panel>

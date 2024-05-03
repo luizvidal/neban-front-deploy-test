@@ -1,0 +1,50 @@
+<div class="centered-container surface-50">
+  <div
+    class="flex-center flex-column gap-3"
+    [ngClass]="isDesktop ? 'py-7' : 'py-3'"
+  >
+    <h1
+      class="font-bold"
+      [ngClass]="isDesktop ? 'text-4xl' : 'text-3xl text-center'"
+    >
+      {{ "LANDING.INFO_CARDS.TITLE" | translate }}
+    </h1>
+
+    <div class="flex gap-3" [ngClass]="{ 'flex-column': !isDesktop }">
+      @for(card of cards(); track $index) {
+      <div
+        class="h-14rem border-round-2xl m-3 surface-100 p-4 flex flex-column gap-3"
+      >
+        <i
+          class="{{ card.ICON }} text-primary font-semibold"
+          [ngClass]="{
+              'text-xl': isDesktop,
+              'text-lg': isTablet,
+              'text-base': isMobile,
+            }"
+        ></i>
+        <h1
+          class="font-semibold line-height-2"
+          [ngClass]="{
+              'text-xl': isDesktop,
+              'text-lg': isTablet,
+              'text-base': isMobile,
+            }"
+        >
+          {{ card.TITLE }}
+        </h1>
+        <p
+          class="text-color-secondary font-medium line-height-2"
+          [ngClass]="{
+              'text-base': isDesktop,
+              'text-md': isTablet,
+              'text-sm': isMobile,
+            }"
+        >
+          {{ card.CONTENT }}
+        </p>
+      </div>
+      }
+    </div>
+  </div>
+</div>

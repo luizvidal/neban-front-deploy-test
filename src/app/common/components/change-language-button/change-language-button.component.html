@@ -1,0 +1,18 @@
+<div
+  style="width: 42px; height: 42px"
+  class="cursor-pointer select-none"
+  (click)="op.toggle($event)"
+>
+  <app-img [src]="currentLangugeImg()" width="42px" height="42px" />
+</div>
+
+<p-overlayPanel #op>
+  <div class="flex flex-column gap-3">
+    @for(language of languages; track $index) {
+    <div class="flex justify-content-start align-items-center gap-2" (click)="onSelectLanguage(language)">
+      <app-img class="cursor-pointer" [src]="language.src!" />
+      <app-link [label]="language.label" />
+    </div>
+    }
+  </div>
+</p-overlayPanel>

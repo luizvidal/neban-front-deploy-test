@@ -1,0 +1,94 @@
+<span
+  class="p-float-label"
+  [ngClass]="{
+    'p-input-icon-left': iconPosition === 'left',
+    'p-input-icon-right': iconPosition === 'right'
+  }"
+>
+  @switch(type) { @case('text') { @if (icon) {
+  <i [class]="icon"></i>
+  }
+  <input
+    pInputText
+    type="text"
+    class="w-full"
+    [placeholder]="placeholder"
+    [id]="inputId"
+    [disabled]="disabled"
+    [ngClass]="{
+      'ng-invalid': controlInvalid
+    }"
+    (ngModelChange)="onChanged($event)"
+    [(ngModel)]="value"
+  />
+  } @case('number') {
+  <p-inputNumber
+    mode="decimal"
+    class="w-full"
+    styleClass="w-full"
+    [locale]="locale"
+    [prefix]="prefix"
+    [suffix]="suffix"
+    [minFractionDigits]="minFractionDigits"
+    [maxFractionDigits]="maxFractionDigits"
+    [disabled]="disabled"
+    [useGrouping]="useGrouping"
+    (ngModelChange)="onChanged($event)"
+    [(ngModel)]="value"
+  />
+  } @case('mask') {
+  <p-inputMask
+    styleClass="w-full"
+    [id]="inputId"
+    [mask]="mask"
+    [disabled]="disabled"
+    [(ngModel)]="value"
+    (ngModelChange)="onChanged($event)"
+    [ngClass]="{
+      'ng-invalid': controlInvalid
+    }"
+  />
+  } @case('dropdown') {
+  <p-dropdown
+    styleClass="w-full"
+    optionLabel="label"
+    optionValue="value"
+    [emptyMessage]="'PRIMENG.emptyMessage' | translate"
+    [emptyFilterMessage]="'PRIMENG.emptyMessage' | translate"
+    [options]="dropdownData"
+    [disabled]="disabled"
+    [(ngModel)]="value"
+    (ngModelChange)="onChanged($event)"
+    [showClear]="showClear"
+  />
+  } @case('currency') {
+
+  <p-inputNumber
+    mode="currency"
+    class="w-full"
+    styleClass="w-full"
+    [allowEmpty]="true"
+    [currency]="currency"
+    [locale]="locale"
+    [disabled]="disabled"
+    [minFractionDigits]="2"
+    [maxFractionDigits]="2"
+    (ngModelChange)="onChanged($event)"
+    [(ngModel)]="value"
+  />
+  } }
+  <label [for]="inputId">{{ label }}{{ controlIsRequired ? " *" : "" }} </label>
+</span>
+
+@if(!hideErrorMessage && control && control.dirty && control.invalid) {
+
+<small class="p-error">{{
+  getTranslatedErrorMessageKey(control.errors)
+    | translate
+      : {
+          field: label,
+          value: getErrorAditionalInfo(control.errors)
+        }
+}}</small>
+
+}

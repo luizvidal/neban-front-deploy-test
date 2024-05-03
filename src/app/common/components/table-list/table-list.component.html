@@ -1,0 +1,215 @@
+<div class="card">
+  <h1 class="m-0 p-0 mb-3 text-lg font-semibold text-primary">
+    {{ title }}
+  </h1>
+
+  <p-table
+    sortMode="single"
+    [scrollHeight]="scrollHeight"
+    [responsiveLayout]="responsiveLayout"
+    [dataKey]="dataKey"
+    [stateStorage]="stateStorage"
+    [stateKey]="stateKey"
+    [styleClass]="styleClass"
+    [loadingIcon]="loadingIcon"
+    [currentPageReportTemplate]="currentPageReportTemplate"
+    [totalRecords]="totalRecords_"
+    [lazy]="true"
+    [lazyLoadOnInit]="true"
+    [loading]="loading_"
+    [scrollable]="true"
+    [value]="value"
+    [rowHover]="true"
+    [rows]="10"
+    [paginator]="true"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="rowsPerPageOptions"
+    [globalFilterFields]="globalFilterFields"
+    (onLazyLoad)="onLazyLoad.emit($event)"
+  >
+    <ng-template pTemplate="caption">
+      <div
+        class="flex flex-column sm:flex-row sm:justify-content-between gap-3"
+      >
+        <div class="flex flex-column sm:flex-row gap-3">
+          @if (showAddButton) {
+          <app-button
+            icon="pi pi-plus"
+            severity="success"
+            styleClass="w-full sm:w-auto"
+            [label]="'COMMON.ADD' | translate"
+            [routerLink]="addButtonRouterLink"
+            [outlined]="true"
+          />
+          }
+
+          <app-button
+            icon="pi pi-filter-slash"
+            severity="primary"
+            styleClass="w-full sm:w-auto"
+            [label]="'COMMON.CLEAR_FILTERS' | translate"
+            [outlined]="true"
+            (click)="onClearFilters()"
+          />
+        </div>
+
+        <!-- <div>
+          <app-input
+            id="searchInput"
+            iconPosition="right"
+            icon="pi pi-search"
+            [label]="'COMMON.SEARCH' | translate"
+            [formControl]="searchInput"
+          />
+        </div> -->
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        @for( column of tableColumns; track $index) {
+        <th [pSortableColumn]="column.field" [style]="column.headerStyle">
+          <div class="flex align-items-center gap-3">
+            <span>{{ column.label }}</span>
+            <p-sortIcon [field]="column.field"></p-sortIcon>
+
+            <p-columnFilter
+              display="menu"
+              [type]="column.type || 'text'"
+              [field]="column.field"
+              [showAddButton]="!!column.showAddButton"
+              [showMatchModes]="column.showMatchModes ?? true"
+              [showOperator]="column.showOperator ?? true"
+            >
+              @if (column.customTemplate) {
+              <ng-template
+                pTemplate="filter"
+                let-value
+                let-filter="filterCallback"
+              >
+                <p-dropdown
+                  [emptyMessage]="emptyMessage"
+                  [emptyFilterMessage]="emptyFilterMessage"
+                  [ngModel]="value"
+                  [style]="{ width: '220px' }"
+                  [options]="column.customFilterDropdownOptions"
+                  (onChange)="filter($event.value)"
+                >
+                  <ng-template let-option pTemplate="item">
+                    <span>{{ option.label }}</span>
+                  </ng-template>
+                </p-dropdown>
+              </ng-template>
+              }
+            </p-columnFilter>
+          </div>
+        </th>
+        }
+        <th style="width: 10%">{{ "COMMON.ACTIONS" | translate }}</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-data>
+      <tr>
+        @for(column of tableColumns; track $index) {
+        <td>
+          <div class="p-column-title">
+            <span class="hidden sm:block font-bold pr-2"
+              >{{ column.label | titlecase }}:
+            </span>
+          </div>
+
+          @switch (true) {
+            @case(column.booleanColumnField) {
+              {{ data[column.field] ? column.trueMessage : column.falseMessage }}
+            }
+
+            @case (!!column.enumColumnField && !!column.enumData) {
+              {{ column.enumData![data[column.field]] }}
+            }
+
+            @case (column.titleCasePipe) {
+              {{ data[column.field] | titlecase }}
+            }
+
+            @case (column.currencyPipe) {
+              {{ data[column.field] | currency : currency }}
+            }
+
+            @default {
+              {{ data[column.field] }}
+            }
+          }
+        </td>
+        }
+
+        <td class="flex align-items-center">
+          <div class="p-column-title">
+            <span class="hidden sm:block font-bold pr-2"
+              >{{ "COMMON.ACTIONS" | translate }}:
+            </span>
+          </div>
+
+          <div class="flex align-items-center gap-2 sm:gap-3 md:gap-4">
+            @if(showEditButton) {
+            <app-button
+              severity="success"
+              icon="pi pi-pencil"
+              [rounded]="true"
+              [routerLink]="['edit', data.id]"
+            />
+            } @if(showDeleteButton) {
+            <app-button
+              severity="danger"
+              icon="pi pi-trash"
+              [rounded]="true"
+              (onClick)="onDelete.emit(data)"
+            />
+            } @if(showSwitch) {
+            <p-inputSwitch
+              [(ngModel)]="data[switchFieldModel]"
+              [disabled]="data['disableSwitch']"
+              (onChange)="
+                onInputSwitchChange.emit({
+                  checked: $event.checked,
+                  data
+                })
+              "
+            />
+            }
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td [attr.colspan]="tableColumns.length + 1">
+          <div
+            style="height: 45vh"
+            class="flex-center flex-column gap-3 align-items-center justify-content-center"
+          >
+            <i
+              class="pi pi-ban font-regular text-color-secondary"
+              style="font-size: 3rem"
+            ></i>
+            <h2 class="text-2xl m-0 p-0 font-regular text-color-secondary">
+              {{ emptyRecordsMessage }}
+            </h2>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="loadingbody">
+      @for(i of '12345678'; track $index) {
+      <tr>
+        @for (j of tableColumns; track $index) {
+        <td><p-skeleton height="3rem" /></td>
+        }
+        <td><p-skeleton height="3rem" /></td>
+      </tr>
+      }
+    </ng-template>
+  </p-table>
+</div>

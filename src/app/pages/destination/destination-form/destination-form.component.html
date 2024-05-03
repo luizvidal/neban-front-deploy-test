@@ -1,0 +1,75 @@
+<p-panel>
+ <ng-template pTemplate="header"
+    ><h1 class="m-0 p-0 text-base text-primary">
+      @if(id()) {
+      {{ "DESTINATION.FORM.EDIT" | translate }}
+
+      } @else {
+      {{ "DESTINATION.FORM.NEW" | translate }}
+      }
+    </h1></ng-template
+  >
+
+  <form class="my-3" [formGroup]="formGroup">
+    <div class="grid pt-2">
+      <div class="col-12 sm:col-6" formGroupName="category">
+        <app-input
+          formControlName="id"
+          [label]="'COMMON.CATEGORY' | translate"
+          type="dropdown"
+          [dropdownData]="categories()"
+        />
+      </div>
+      <div class="col-12 sm:col-6" formGroupName="walletBankAccount">
+        <app-input
+          formControlName="id"
+          [label]="'COMMON.NEBAN_ACCOUNT' | translate"
+          type="dropdown"
+          [dropdownData]="walletBankAccountsOptions()"
+        />
+      </div>
+      <div class="col-12 sm:col-6">
+        <app-input
+          formControlName="initialAmount"
+          [label]="'COMMON.INITIAL_VALUE' | translate"
+          type="currency"
+          currency="BRL"
+          locale="pt-BR"
+          [hideErrorMessage]="true"
+        />
+      </div>
+      <div class="col-12 sm:col-6">
+        <app-input
+          formControlName="finalAmount"
+          [label]="'COMMON.FINAL_VALUE' | translate"
+          type="currency"
+          currency="BRL"
+          locale="pt-BR"
+          [hideErrorMessage]="true"
+        />
+      </div>
+    </div>
+  </form>
+
+  <div class="flex flex-column sm:flex-row gap-3 justify-content-end mt-3">
+    @if(id()) {
+    <app-button
+      severity="danger"
+      styleClass="w-full sm:w-auto"
+      [label]="'COMMON.CANCEL' | translate"
+      [outlined]="true"
+      [routerLink]="['/app', 'destination']"
+    />
+    }
+
+    <app-button
+      severity="success"
+      [label]="'COMMON.SAVE' | translate"
+      styleClass="w-full text-center sm:w-auto"
+      [loading]="loading()"
+      [disabled]="formGroup.invalid || formGroup.pristine"
+      [outlined]="true"
+      (onClick)="save()"
+    />
+  </div>
+</p-panel>

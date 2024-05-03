@@ -1,0 +1,379 @@
+{
+  "COMMON": {
+    "ADMINISTRATION": "Administração",
+    "QUOTATIONS": "Cotações",
+    "SUPPORT": "Suporte",
+    "BLOG": "Blog",
+    "START": "Início",
+    "NAME": "Nome",
+    "LAST_NAME": "Sobrenome",
+    "PROFESSION": "Profissão",
+    "NATIONALITY": "Nacionalidade",
+    "CIVIL_STATE": "Estado Civil",
+    "PROPERTY_REGIME": "Regime de bens",
+    "ADDRESS": "Endereço",
+    "DESCRIPTION": "Descrição",
+    "CANCEL": "Cancelar",
+    "SAVE": "Salvar",
+    "CATEGORIES": "Categorias",
+    "CONFIRM_DELETE": "Excluir {{value}}?",
+    "ACTIONS": "Ações",
+    "SEARCH": "Buscar",
+    "SINGLE": "Solteiro(a)",
+    "MARRIED": "Casado(a)",
+    "APARTED": "Separado(a)",
+    "DIVORCED": "Divorciado(a)",
+    "WIDOW": "Viúvo(a)",
+    "PARTIALCOMMUNITY": "Comunhão Parcial de Bens",
+    "UNIVERSALCOMMUNITY": "Comunhão Universal de Bens",
+    "CONVENTIONALSEPARATION": "Separação Convencional de Bens",
+    "MANDATORYSEPARATION": "Separação Obrigatória de Bens",
+    "FINALPARTICIPATION": "Participação Final nos aquestos",
+    "CUSTOMERS": "Clientes",
+    "TYPE": "Tipo",
+    "STATUS": "Status",
+    "ACTIVE": "Ativo",
+    "BLOCKED": "Bloqueado",
+    "ENABLE": "Habilitar",
+    "DISABLE": "Desabilitar",
+    "ADD": "Adicionar",
+    "CLEAR_FILTERS": "Limpar filtros",
+    "ACCOUNT": "Conta",
+    "AGENCY": "Agência",
+    "COUNTRY": "País",
+    "BANK_ACCOUNTS": "Contas Bancárias",
+    "OWNER_NAME": "Nome do titular",
+    "DESTINATIONS": "Destinos",
+    "NEBAN_ACCOUNT": "Conta Neban",
+    "NEBAN_ACCOUNTS": "Contas Neban",
+    "INITIAL_VALUE": "Valor inicial",
+    "FINAL_VALUE": "Valor final",
+    "ACCOUNT_NUMBER": "Número da conta",
+    "BANK_NUMBER": "Número do banco",
+    "AGENCY_NUMBER": "Número da agência",
+    "CATEGORY": "Categoria",
+    "QUOTATION": "Cotação",
+    "ORIGIN_CURRENCY": "Moeda origem",
+    "DESTINY_CURRENCY": "Moeda destino",
+    "AMOUNT": "Valor",
+    "PENDING": "Pendente",
+    "APPROVED": "Aprovado",
+    "TRANSACTIONS": "Transações",
+    "NEBAN_BANK_ACCOUNTS": "Contas Neban",
+    "DATA": "Dados",
+    "ERROR": "Erro",
+    "TRANSACTION_TYPE": "Tipo de transação",
+    "BANK_ACCOUNT": "Conta bancária",
+    "BILLET_VALUE": "Valor do boleto",
+    "VALUE": "Valor",
+    "TOTAL_VALUE": "Valor total",
+    "CONVERTED_VALUE": "Valor convertido",
+    "REGISTER": "Cadastrar",
+    "ENTER": "Entrar",
+    "BILLET": "Boleto",
+    "OTHER_PAYMENT": "Outras formas de pagamento",
+    "YES": "Sim",
+    "NO": "Não",
+    "ATTENTION_CANOT_BE_UNDONE": "Atencão, esta ação não poderá ser desfeita deseja prosseguir?",
+    "TRANSACTION_STATUS": "Status de Transação",
+    "TRANSACTION_CATEGORIES": "Categorias de Transação"
+  },
+  "TOAST": {
+    "POST": "Criado com sucesso!",
+    "PUT": "Editado com  sucesso!",
+    "DELETE": "Deletado com sucesso!",
+    "ERROR": "Ocorreu um erro, tente novamente mais tarde!"
+  },
+  "LANDING": {
+    "CAROUSEL_CARDS": {
+      "TITLE": "Soluções para diversas necessidades",
+      "CARDS": [
+        {
+          "TITLE": "Enviar dinheiro para parentes ou uma conta sua no exterior",
+          "CONTENT": "Para famílias transferirem dinheiro para quem está fora do Brasil"
+        },
+        {
+          "TITLE": "Receber salários ou pagamentos do exterior",
+          "CONTENT": "Para pessoas que trabalham para empresas estrangeiras e buscam praticidade."
+        },
+        {
+          "TITLE": "Google AdSense e plataformas digitais",
+          "CONTENT": "Praticidade para criadores receberem do YouTube, Facebook e outros."
+        },
+        {
+          "TITLE": "Investir no exterior e receber seus ganhos",
+          "CONTENT": "Diversifique seus investimentos em mercados internacionais."
+        },
+        {
+          "TITLE": "Importar e exportar produtos ou serviços",
+          "CONTENT": "Para o começante e o produtor."
+        },
+        {
+          "TITLE": "Startups e grandes volumes de dinheiro",
+          "CONTENT": "Receba aportes, empréstimos e valores elevados com condições exclusivas."
+        }
+      ]
+    },
+    "FOOTER": {
+      "ADDRESS": "999 Locust View Drive San Francisco California 99999-999",
+      "DOCUMENT": "Neban Ltda | CNPJ: 99.999.999/9999-99",
+      "SOLUTION": "Conheça a solução PJ",
+      "ABOUT": "Sobre nós",
+      "HELP": "Central de Ajuda",
+      "WORK_WITH_US": "Trabalhe conosco",
+      "AFFILIATE": "Seja um afiliado",
+      "SECURITY": "Este site é seguro?",
+      "PRIVACY": "Política de privacidade",
+      "TERMS": "Termos de uso",
+      "COPYRIGHT": "Copyright © {{year}} Neban. Todos os direitos reservados."
+    },
+    "HEADER": {
+      "NAVBAR": [
+        {
+          "TITLE": "Pessoa Física",
+          "CHILDREN": [
+            {
+              "LABEL": "Como enviar"
+            },
+            {
+              "LABEL": "Como receber"
+            },
+            {
+              "LABEL": "App"
+            }
+          ]
+        },
+        {
+          "TITLE": "Pessoa Jurídica",
+          "CHILDREN": [
+            {
+              "LABEL": "Conheça a solução PJ"
+            },
+            {
+              "LABEL": "Gerador de Invoice"
+            },
+            {
+              "LABEL": "Soluções para Startups"
+            },
+            {
+              "LABEL": "Serviços Paralegais"
+            },
+            {
+              "LABEL": "Importação e exportação"
+            }
+          ]
+        },
+        {
+          "TITLE": "Cotações",
+          "CHILDREN": [
+            {
+              "LABEL": "USD Dólar americano"
+            },
+            {
+              "LABEL": "BRL Real brasileiro"
+            },
+            {
+              "LABEL": "ARS Peso argentino"
+            },
+            {
+              "LABEL": "AUD Dólar australiano"
+            },
+            {
+              "LABEL": "CAD Dólar canadense"
+            }
+          ]
+        },
+        {
+          "TITLE": "Ajuda",
+          "CHILDREN": [
+            {
+              "LABEL": "Central de ajuda"
+            },
+            {
+              "LABEL": "Códigos SWIFT/BIC"
+            }
+          ]
+        },
+        {
+          "TITLE": "Parcerias e APIs",
+          "CHILDREN": [
+            {
+              "LABEL": "Seja um parceiro"
+            },
+            {
+              "LABEL": "Use nossas APIs"
+            }
+          ]
+        },
+        {
+          "TITLE": "Blog"
+        }
+      ]
+    },
+    "INFO_CARDS": {
+      "TITLE": "Mais benefícios para você enviar ou receber dinheiro",
+      "CARDS": [
+        {
+          "TITLE": "Taxas até 8 vezes menores que os bancos",
+          "CONTENT": "Além dos custos baixos, você não precisa falar com gerentes nem lidar com a burocracia bancária."
+        },
+        {
+          "TITLE": "Segurança que o seu dinheiro vai chegar",
+          "CONTENT": "Seguimos protocolos rígidos para garantir que sua transferência chegue de forma segura e rápida."
+        },
+        {
+          "TITLE": "Plataforma intuitiva e fácil de usar",
+          "CONTENT": "Qualquer pessoa pode fazer sua transferência sozinha e 100% online."
+        }
+      ]
+    },
+    "TAB_PANEL": {
+      "HOW_SEND": {
+        "TITLE": "Como enviar",
+        "CARDS": [
+          {
+            "TITLE": "Informe os dados da conta no exterior",
+            "CONTENT": "Pode ser no seu nome, de outra pessoa ou de uma empresa."
+          },
+          {
+            "TITLE": "Faça um PIX ou uma TED",
+            "CONTENT": "Transfira o valor em reais para a gente, nós convertemos e enviamos para o exterior. Identificamos o seu pagamento em até 15 minutos"
+          },
+          {
+            "TITLE": "O dinheiro chega no destino em até 1 dia útil",
+            "CONTENT": "Para operações de dolar ou peso argentino, o prazo é de apenas 15 minutos, na maioria dos casos"
+          }
+        ],
+        "STEP": "Veja o passo a passo de envio"
+      },
+      "HOW_RECEIVE": {
+        "TITLE": "Como receber",
+        "CARDS": [
+          {
+            "TITLE": "Selecione a moeda e motivo do recebimento",
+            "CONTENT": "Reduzimos a burocracia, pedindo o mínimo de informações e documentos necessários para a sua segurança."
+          },
+          {
+            "TITLE": "Compartilhe com seu pagador os dados bancários que vamos gerar",
+            "CONTENT": "Assim, qualquer pessoa ou empresa no mundo poderá enviar dinheiro para você."
+          },
+          {
+            "TITLE": "O dinheiro chega ao Brasil, em 90% dos casos, em até 1 dia útil",
+            "CONTENT": "Daí é só pedir o resgate dos valores para a sua conta bancária. O dinheiro deve cair na sua conta em até 15 minutos."
+          }
+        ],
+        "STEP": "Veja o passo a passo de recebimento"
+      }
+    },
+    "TITLE_AND_IMAGE": {
+      "TITLE": {
+        "START": "Transferência internacional com o",
+        "MIDDLE": "menor preço",
+        "AND": "e",
+        "END": "envio rápido"
+      },
+      "PARAGRAPHS": [
+        "Pagamento com Pix",
+        "Envio de dolar e peso argentino em minutos",
+        "Empresa brasileira com atendimento em português"
+      ]
+    }
+  },
+  "VALIDATION": {
+    "REQUIRED": "{{field}} é obrigatório",
+    "MIN_LENGTH": "{{field}} precisa ter no mínimo {{value}} caracteres!",
+    "BLANK_STRING": "{{field}} campo não pode estar em branco",
+    "PATTERN": "{{field}} deve ter o formato válido"
+  },
+  "CATEGORY": {
+    "FORM": {
+      "NEW": "Nova categoria",
+      "EDIT": "Editar categoria"
+    },
+    "LIST": {
+      "EMPTY": "Não há categorias!"
+    }
+  },
+  "CUSTOMER": {
+    "FORM": {
+      "TITLE": "Editar dados"
+    },
+    "LIST": {
+      "EMPTY": "Não há clientes!",
+      "ENABLE_QUESTION": "Tem certeza de que deseja habilitar {{value}}?",
+      "ENABLE_CUSTOMER": "Habilitar cliente",
+      "DISABLE_QUESTION": "Tem certeza de que deseja desabilitar {{value}}?",
+      "DISABLE_CUSTOMER": "Desabilitar cliente"
+    }
+  },
+  "CUSTOMER_BANK_ACCOUNT": {
+    "LIST": {
+      "EMPTY": "Não há contas bancárias!",
+      "DELETE_ACCOUNT": "Excluir conta {{value}}"
+    },
+    "FORM": {
+      "EDIT": "Editar conta bancária",
+      "NEW": "Nova conta bancária"
+    }
+  },
+  "DESTINATION": {
+    "LIST": {
+      "EMPTY": "Não há destinos!",
+      "DELTE": "Excluir destino"
+    },
+    "FORM": {
+      "NEW": "Novo destino",
+      "EDIT": "Editar destino"
+    }
+  },
+  "HOME": {
+    "TITLE": "Bem vindo!",
+    "PARAGRAPH": "Clique em \"Dados\" na barra de navegação ao lado para preencher seus dados."
+  },
+  "NEBAN_BANK_ACCOUNT": {
+    "LIST": {
+      "EMPTY": "Não há contas neban!",
+      "DELETE_ACCOUNT": "Excluir conta {{value}}"
+    },
+    "FORM": {
+      "EDIT": "Editar conta neban",
+      "NEW": "Nova conta neban"
+    }
+  },
+  "QUOTATION": {
+    "BRL_VALUE": "Valor Real (R$)",
+    "ARS_VALUE": "Valor Peso Argentino (ARS)",
+    "PERCENTUAL_TAX": "Taxa Percentual"
+  },
+  "TRANSACTION": {
+    "LIST": {
+      "EMPTY": "Não há transações!",
+      "DELETE_TRANSACTION": "Excluir transação"
+    },
+    "FORM": {
+      "EDIT": "Editar transação",
+      "NEW": "Nova transação"
+    }
+  },
+  "PRIMENG": {
+    "addRule": "Adicionar filtro",
+    "removeRule": "Remover filtro",
+    "matchAll": "Todos",
+    "matchAny": "Qualquer um",
+    "startsWith": "Começa com",
+    "contains": "Contém",
+    "notContains": "Não contém",
+    "endsWith": "Termina com",
+    "equals": "Igual",
+    "notEquals": "Diferente",
+    "apply": "Aplicar",
+    "clear": "Limpar",
+    "lt": "Menor que",
+    "lte": "Menor ou igual a",
+    "gt": "Maior que",
+    "gte": "Maior ou igual a",
+    "currentPageReportTemplate": "{currentPage} de {totalPages}",
+    "emptyMessage": "Sem resultados",
+    "emptyFilterMessage": "Sem resultados"
+  }
+}

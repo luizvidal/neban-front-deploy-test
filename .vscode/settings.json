@@ -1,0 +1,22 @@
+{
+  "restoreTerminals.terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "NebanFrontend",
+          "commands": [
+            "npm start"
+          ],
+          "shouldRunCommands": false
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "Github",
+        },
+      ]
+    }
+  ]
+}

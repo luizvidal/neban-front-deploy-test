@@ -1,0 +1,95 @@
+<p-panel>
+  <ng-template pTemplate="header"
+    ><h1 class="m-0 p-0 text-base text-primary">
+      @if(id()) {
+      {{ "NEBAN_BANK_ACCOUNT.FORM.EDIT" | translate }}
+
+      } @else {
+      {{ "NEBAN_BANK_ACCOUNT.FORM.NEW" | translate }}
+      }
+    </h1></ng-template
+  >
+  <form class="my-3" [formGroup]="formGroup">
+    <div class="grid pt-2">
+      <div class="col-12 sm:col-6">
+        <app-input
+          formControlName="customerName"
+          [label]="'COMMON.OWNER_NAME' | translate"
+        />
+      </div>
+
+      <div class="col-12 sm:col-3">
+        <app-input
+          type="mask"
+          formControlName="customerPersonalDocument"
+          mask="999.999.999-99"
+          label="CPF"
+          [hideErrorMessage]="true"
+        />
+      </div>
+
+      <div class="col-12 sm:col-3">
+        <app-input
+          type="mask"
+          formControlName="customerLegalDocument"
+          mask="99.999.999/9999-99"
+          label="CNPJ"
+          [hideErrorMessage]="true"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6">
+        <app-input
+          type="number"
+          formControlName="accountNumber"
+          [label]="'COMMON.ACCOUNT_NUMBER' | translate"
+        />
+      </div>
+
+      <div class="col-12 sm:col-6">
+        <app-input
+          type="number"
+          formControlName="agencyNumber"
+          [label]="'COMMON.BANK_NUMBER' | translate"
+        />
+      </div>
+
+      <div class="col-12">
+        <app-input
+          type="number"
+          formControlName="bankNumber"
+          [label]="'COMMON.AGENCY_NUMBER' | translate"
+        />
+      </div>
+
+      <div class="col-12">
+        <app-input
+          formControlName="customerCountry"
+          [label]="'COMMON.NATIONALITY' | translate"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-column sm:flex-row gap-3 justify-content-end mt-3">
+      @if(id()) {
+      <app-button
+        severity="danger"
+        styleClass="w-full sm:w-auto"
+        [label]="'COMMON.CANCEL' | translate"
+        [outlined]="true"
+        [routerLink]="['/app', 'neban-bank-account']"
+      />
+      }
+
+      <app-button
+        severity="success"
+        [label]="'COMMON.SAVE' | translate"
+        styleClass="w-full text-center sm:w-auto"
+        [loading]="loading()"
+        [disabled]="formGroup.invalid || formGroup.pristine"
+        [outlined]="true"
+        (onClick)="save()"
+      />
+    </div>
+  </form>
+</p-panel>

@@ -1,0 +1,81 @@
+<div class="centered-container py-8">
+  <p-tabView [style]="{ maxWidth: isDesktop ? '50%' : '100%',   }">
+    <p-tabPanel [header]="howSendData()?.TITLE">
+      <div
+        class="flex flex-column gap-3 align-items-center justify-content-center fadeinleft animation-duration-500"
+      >
+        @for (data of howSendData()?.CARDS; track $index) {
+        <div
+          class="w-full flex flex-column gap-2 text-justify hover:shadow-1 py-3 border-round-sm p-3 surface-border surface-50"
+        >
+          <h1
+            class="font-bold"
+            [ngClass]="
+              isDesktop ? 'text-xl  line-height-3' : 'text-base  line-height-2'
+            "
+          >
+            <span class="text-primary">{{ $index + 1 }}.</span> {{ data.TITLE }}
+          </h1>
+          <p
+            class="text-color-secondary font-normal text-justify"
+            [ngClass]="
+              isDesktop ? 'text-base  line-height-3' : 'text-sm  line-height-2'
+            "
+          >
+            {{ data.CONTENT }}
+          </p>
+        </div>
+
+        }
+
+        <div class="flex w-full justify-content-start">
+          <app-button
+            [label]="howSendData()?.STEP"
+            [outlined]="true"
+            [rounded]="true"
+          />
+        </div>
+      </div>
+      <p-divider />
+    </p-tabPanel>
+
+    <p-tabPanel [header]="howRecieveData()?.TITLE">
+      <div
+        class="flex flex-column gap-3 align-items-center justify-content-center fadeinleft animation-duration-500"
+      >
+        @for (data of howRecieveData()?.CARDS; track $index) {
+        <div
+          class="w-full flex flex-column gap-2 text-justify hover:shadow-1 py-3 border-round-sm p-3 surface-border surface-50"
+        >
+          <h1
+            class="font-bold"
+            [ngClass]="
+              isDesktop ? 'text-xl  line-height-3' : 'text-base  line-height-2'
+            "
+          >
+            <span class="text-primary">{{ $index + 1 }}.</span> {{ data.TITLE }}
+          </h1>
+          <p
+            class="text-color-secondary font-normal text-justify"
+            [ngClass]="
+              isDesktop ? 'text-base  line-height-3' : 'text-sm  line-height-2'
+            "
+          >
+            {{ data.CONTENT }}
+          </p>
+        </div>
+
+        }
+
+        <div class="flex w-full justify-content-start">
+          <app-button
+            [label]="howRecieveData()?.STEP"
+            [outlined]="true"
+            [rounded]="true"
+          />
+        </div>
+      </div>
+      <p-divider />
+    </p-tabPanel>
+  </p-tabView>
+</div>

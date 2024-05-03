@@ -1,0 +1,47 @@
+<p-panel>
+  <ng-template pTemplate="header"
+    ><h1 class="m-0 p-0 text-base text-primary">
+      @if(id()) {
+      {{ "CATEGORY.FORM.EDIT" | translate }}
+
+      } @else {
+      {{ "CATEGORY.FORM.NEW" | translate }}
+      }
+    </h1></ng-template
+  >
+
+  <form class="my-3" [formGroup]="formGroup">
+    <div class="grid">
+      <div class="col-12 sm:col-6 md:col-4">
+        <app-input formControlName="name" [label]="'COMMON.NAME' | translate" />
+      </div>
+      <div class="col-12 sm:col-6 md:col-8">
+        <app-input
+          formControlName="description"
+          [label]="'COMMON.DESCRIPTION' | translate"
+        />
+      </div>
+    </div>
+    <div class="flex flex-column sm:flex-row gap-3 justify-content-end mt-3">
+      @if(id()) {
+      <app-button
+        severity="danger"
+        [label]="'COMMON.CANCEL' | translate"
+        styleClass="w-full sm:w-auto"
+        [outlined]="true"
+        [routerLink]="['/administration', 'category']"
+      ></app-button>
+      }
+
+      <app-button
+        severity="success"
+        [label]="'COMMON.SAVE' | translate"
+        styleClass="w-full sm:w-auto"
+        [disabled]="formGroup.invalid || formGroup.pristine"
+        [loading]="loading()"
+        [outlined]="true"
+        (onClick)="save()"
+      ></app-button>
+    </div>
+  </form>
+</p-panel>
